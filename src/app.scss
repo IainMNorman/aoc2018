@@ -1,0 +1,28 @@
+body {
+  font-family: Cousine, 'Courier New', Courier, monospace;
+  background: rgb(21, 6, 37);
+  color: gold;
+  padding: 20px;
+  font-size: 18px;
+}
+
+a {
+  color: goldenrod;
+  &:hover {
+    color: gold;
+    text-decoration: none;
+  }
+}
+
+nav {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.glow {
+  text-shadow: 0 0 5px rgb(224, 204, 153)
+}
+
+.canvas-cont {
+  height: 600px;
+}
