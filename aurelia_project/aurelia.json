@@ -1,5 +1,5 @@
 {
-  "name": "aoc2015",
+  "name": "aoc2018",
   "type": "project:application",
   "bundler": {
     "id": "webpack",
