@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body {
-        background-color: #150625;
-      }
-    </style>
-    <meta charset="utf-8">
-    <title><%- htmlWebpackPlugin.options.metadata.title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <!-- imported CSS are concatenated and added automatically -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-  </head>
-  <body aurelia-app="main" class="crt">
-    <% if (htmlWebpackPlugin.options.metadata.server) { %>
-    <!-- Webpack Dev Server reload -->
-    <script src="/webpack-dev-server.js"></script>
-    <% } %>
-  </body>
+
+<head>
+  <style>
+    body {
+      background-color: #150625;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="-1">
+  <title>
+    <%- htmlWebpackPlugin.options.metadata.title %>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- imported CSS are concatenated and added automatically -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+</head>
+
+<body aurelia-app="main" class="crt">
+  <% if (htmlWebpackPlugin.options.metadata.server) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+</body>
+
 </html>
