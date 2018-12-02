@@ -19,7 +19,6 @@ export class Day02 extends P5Base {
     p.loadStrings('https://aocproxy.azurewebsites.net/2018/day/2/input', (file) => {
       self.input = file;
       p.createCanvas(600, 200);
-      p.background(21, 6, 37);
       p.fill(255, 215, 0);
       p.text('Checksum twice count', 0, 10);
       p.text('Checksum thrice count', 0, 85);
@@ -51,7 +50,7 @@ export class Day02 extends P5Base {
     if (this.part1Done && !this.part2Done) {
       let parcelA = this.input[this.count];
 
-      for (let i = 0; i < this.input.length; i++) {
+      for (let i = this.count; i < this.input.length; i++) {
         let parcelB = this.input[i];
         let commonLetters = this.getCommonLettersWhenOnlyOneDifferent(parcelA, parcelB);
         p.textFont('courier');

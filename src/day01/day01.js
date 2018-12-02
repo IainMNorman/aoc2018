@@ -21,7 +21,6 @@ export class Day01 extends P5Base {
       self.length = this.input.length;
       self.speed = self.length;
       p.createCanvas(p.map(self.length, 0, self.length, 0, 1200), 600);
-      p.background(21, 6, 37);
       p.stroke(255, 215, 0);
       p.line(0, p.height / 2, p.width, p.height / 2);
       self.totalShifts = 0;
