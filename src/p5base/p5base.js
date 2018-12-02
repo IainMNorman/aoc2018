@@ -1,7 +1,7 @@
-import P5 from "p5";
+import P5 from 'p5';
 
-export class Aup5 {
-  constructor(container){
+export class P5Base {
+  constructor(container) {
     this.container = container;
   }
 
@@ -10,14 +10,15 @@ export class Aup5 {
   }
 
   init() {
-    var self = this;
-    new P5((p) => {
+    let self = this;
+    let p5 = new P5((p) => {
       p.setup = () => {
         self.setup(p);
-      }  
+      };
       p.draw = () => {
         self.draw(p);
-      }
+      };
     }, this.container, true);
+    this.p5 = p5;
   }
 }

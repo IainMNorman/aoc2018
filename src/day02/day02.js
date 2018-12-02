@@ -1,8 +1,8 @@
-import { Aup5 } from "../aup5/aup5";
+import { P5Base } from '../p5base/p5base';
 
-export class Day02 extends Aup5 {
+export class Day02 extends P5Base {
   constructor() {
-    super("day02-container");
+    super('day02-container');
     this.answer1 = 0;
     this.answer2 = '';
     this.input = [];
@@ -14,21 +14,20 @@ export class Day02 extends Aup5 {
   }
 
   setup(p) {
+    let self = this;
     p.textFont('Helvetica');
-    p.loadStrings("https://aocproxy.azurewebsites.net/2018/day/2/input", (file) => {
-      this.input = file;
+    p.loadStrings('https://aocproxy.azurewebsites.net/2018/day/2/input', (file) => {
+      self.input = file;
       p.createCanvas(600, 200);
       p.background(21, 6, 37);
       p.fill(255, 215, 0);
-      p.text("Checksum twice count", 0, 10);
-      p.text("Checksum thrice count", 0, 85);
-      //this.answer2 = this.part2(this.input, p);
+      p.text('Checksum twice count', 0, 10);
+      p.text('Checksum thrice count', 0, 85);
     });
   }
 
   draw(p) {
     if (this.input.length > 0) {
-
       if (!this.part1Done) {
         if (this.count < this.input.length) {
           if (this.hasRepeatedLetterCount(this.input[this.count], 2)) {
@@ -50,12 +49,12 @@ export class Day02 extends Aup5 {
     }
 
     if (this.part1Done && !this.part2Done) {
-      var parcelA = this.input[this.count];
+      let parcelA = this.input[this.count];
 
       for (let i = 0; i < this.input.length; i++) {
-        var parcelB = this.input[i];
-        var commonLetters = this.getCommonLettersWhenOnlyOneDifferent(parcelA, parcelB);
-        p.textFont("courier");
+        let parcelB = this.input[i];
+        let commonLetters = this.getCommonLettersWhenOnlyOneDifferent(parcelA, parcelB);
+        p.textFont('courier');
         p.textSize(25);
         p.fill(21, 6, 37);
         p.noStroke();
@@ -76,20 +75,9 @@ export class Day02 extends Aup5 {
     }
   }
 
-  part2(input, p) {
-    for (let i = 0; i < input.length; i++) {
-      for (let j = 0; j < input.length; j++) {
-        var commonLetters = this.getCommonLettersWhenOnlyOneDifferent(input[i], input[j]);
-        if (commonLetters != false) {
-          return commonLetters;
-        }
-      }
-    }
-  }
-
   getCommonLettersWhenOnlyOneDifferent(parcelId1, parcelId2) {
-    var commonCount = 0;
-    var uncommonIndex = 0;
+    let commonCount = 0;
+    let uncommonIndex = 0;
     for (let i = 0; i < parcelId1.length; i++) {
       if (parcelId1[i] === parcelId2[i]) {
         commonCount++;
@@ -101,9 +89,8 @@ export class Day02 extends Aup5 {
       let ar = parcelId1.split('');
       ar.splice(uncommonIndex, 1);
       return ar.join('');
-    } else {
-      return false;
     }
+    return false;
   }
 
   hasRepeatedLetterCount(parcelId, count) {
@@ -111,9 +98,8 @@ export class Day02 extends Aup5 {
     for (let i = 0; i < parcelId.length; i++) {
       dict[parcelId[i]] ? dict[parcelId[i]]++ : dict[parcelId[i]] = 1;
     }
-
     for (const key in dict) {
-      if (dict[key] == count) {
+      if (dict[key] === count) {
         return true;
       }
     }

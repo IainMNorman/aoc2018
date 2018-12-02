@@ -1,64 +1,56 @@
-import P5 from "p5";
+import { P5Base } from '../p5base/p5base';
 
-export class Day01 {
-  attached() {
-    this.initP5();
+export class Day01 extends P5Base {
+  constructor() {
+    super('day01-container');
+    this.speed = 30;
+    this.count = 0;
+    this.drift = 0;
+    this.repeat = false;
+    this.input = '';
+    this.length = 0;
+    this.pastFreqs = new Set([0]);
+    this.partOne = false;
   }
 
-  initP5() {
-    this.p5 = new P5(this.sketch, "day01-container");
-    this.p5.parent = this;
+  setup(p) {
+    let self = this;
+    p.loadStrings('https://aocproxy.azurewebsites.net/2018/day/1/input', (file) => {
+      file.pop();
+      self.input = file;
+      self.length = this.input.length;
+      self.speed = self.length;
+      p.createCanvas(p.map(self.length, 0, self.length, 0, 1200), 600);
+      p.background(21, 6, 37);
+      p.stroke(255, 215, 0);
+      p.line(0, p.height / 2, p.width, p.height / 2);
+      self.totalShifts = 0;
+    });
   }
 
-  sketch(p) {
-    let speed = 30;
-    let count = 0;    
-    let drift = 0;
-    let repeat = false;
-    let input = "";
-    let length = 0;
-    let pastFreqs = new Set([0]);
-    let partOne = false;
-
-    p.setup = () => {
-      p.loadStrings("https://aocproxy.azurewebsites.net/2018/day/1/input", (file) => {
-        file.pop();
-        input = file;
-        length = input.length;
-        speed = length;
-        p.createCanvas(p.map(length, 0, length, 0, 1200), 600);
-        p.background(21, 6, 37);
-        p.stroke(255, 215, 0);
-        p.line(0, p.height / 2, p.width, p.height / 2);
-        p.parent.totalShifts = 0;
-      });
-    };
-
-    p.draw = () => {
-      if (input.length !== 0 && count !== length) {
-        for (let i = 0; i < speed; i++) {
-          p.parent.count = count;
-          let move = parseInt(input[count]);
-          drift += move;
-          if (pastFreqs.has(drift) && !repeat) {
-            p.parent.repeat = drift;
-            repeat = true;
-            p.noLoop();
-          } else {
-            pastFreqs.add(drift);
+  draw(p) {
+    if (this.input.length > 0 && this.count < this.length) {
+      for (let i = 0; i < this.speed; i++) {
+        let move = parseInt(this.input[this.count], 10);
+        this.drift += move;
+        if (this.pastFreqs.has(this.drift) && !repeat) {
+          this.answer2 = this.drift;
+          this.repeat = true;
+          p.noLoop();
+        } else {
+          this.pastFreqs.add(this.drift);
+        }
+        p.point(p.map(this.count, 0, this.length, 0, p.width), p.map(this.drift, 80000, -80000, 0, p.height));
+        this.count++;
+        this.totalShifts++;
+        if (this.count === this.length) {
+          if (!this.partOne) {
+            this.answer1 = this.drift;
+            this.partOne = true;
           }
-          p.point(p.map(count, 0, length, 0, p.width), p.map(drift, 80000, -80000, 0, p.height));
-          count++;
-          p.parent.totalShifts++;
-          if (count == length) {
-            if (!partOne) {
-              p.parent.finalFreq = drift;
-              partOne = true;
-            }
-            count = 0;
-          }
+          this.count = 0;
         }
       }
-    };
+    }
   }
 }
