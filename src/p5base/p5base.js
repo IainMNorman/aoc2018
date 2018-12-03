@@ -3,6 +3,7 @@ import P5 from 'p5';
 export class P5Base {
   constructor(container) {
     this.container = container;
+    this.drawing = true;
   }
 
   attached() {
@@ -16,9 +17,15 @@ export class P5Base {
         self.setup(p);
       };
       p.draw = () => {
-        self.draw(p);
+        if (this.drawing) {
+          self.draw(p);
+        }
       };
     }, this.container, true);
     this.p5 = p5;
+  }
+
+  stop() {
+    this.drawing = false;
   }
 }
