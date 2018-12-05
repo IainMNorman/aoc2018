@@ -17,7 +17,7 @@ export class Day04 extends P5Base {
   setup(p) {
     this.stop();
 
-    this.frameRate = 6;
+    this.frameRate = 5;
     p.angleMode(p.DEGREES);
     p.createCanvas(600, 300);
     p.background(21, 6, 37);
@@ -54,6 +54,7 @@ export class Day04 extends P5Base {
       this.currentState = sag.state;
       if (this.currentState === 'shift') {
         this.currentGuard = sag.guard;
+        this.guardX = 400;
       }
     }
     if (this.currentState === 'shift' || this.currentState === 'awake') {
@@ -62,7 +63,7 @@ export class Day04 extends P5Base {
       } else {
         p.image(this.elfAwakeR, this.guardX, 140);
       }
-      p.constrain(this.guardX += p.random(-30, 30), 100, 500);
+      this.guardX = p.constrain(this.guardX += p.random(-30, 30), 100, 500);
     } else if (this.currentState === 'asleep') {
       p.image(this.elfAsleep, this.guardX, 140);
     }
