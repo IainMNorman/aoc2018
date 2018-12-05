@@ -28,4 +28,8 @@ export class P5Base {
   stop() {
     this.drawing = false;
   }
+
+  play() {
+    this.drawing = true;
+  }
 }

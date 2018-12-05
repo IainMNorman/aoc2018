@@ -2,7 +2,7 @@ import {
   P5Base
 } from '../p5base/p5base';
 
-export class Day02 extends P5Base {
+export class Day03 extends P5Base {
   constructor() {
     super('day03-container');
     this.answer1 = 0;
@@ -28,7 +28,7 @@ export class Day02 extends P5Base {
   draw(p) {
     if (this.input.length > 0 && this.count < this.input.length) {
       let rect = this.input[this.count];
-      var match = rect.match(/\d+/g);
+      let match = rect.match(/\d+/g);
       let x = +match[1] - 1;
       let y = +match[2] - 1;
       let w = +match[3];
@@ -42,16 +42,16 @@ export class Day02 extends P5Base {
             this.coords[`${i},${j}`] = 1;
           } else {
             this.coords[`${i},${j}`]++;
-          }  
-        }  
+          }
+        }
       }
 
       this.count++;
     }
 
-    if (this.input.length > 0 && this.count == this.input.length) {
+    if (this.input.length > 0 && this.count === this.input.length) {
       this.answer1 = 0;
-      for (var property in this.coords) {
+      for (let property in this.coords) {
         if (this.coords.hasOwnProperty(property)) {
           if (this.coords[property] > 1) {
             this.answer1++;
@@ -60,8 +60,8 @@ export class Day02 extends P5Base {
       }
 
       this.answer2 = 1260;
-      p.fill(0,255,0);
-      p.rect(306,183, 24,16)
+      p.fill(0, 255, 0);
+      p.rect(306, 183, 24, 16);
 
       this.stop();
       p.noLoop();
