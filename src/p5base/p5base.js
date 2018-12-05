@@ -17,7 +17,7 @@ export class P5Base {
         self.setup(p);
       };
       p.draw = () => {
-        if (this.drawing) {
+        if (self.drawing) {
           self.draw(p);
         }
       };

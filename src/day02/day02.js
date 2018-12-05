@@ -11,6 +11,7 @@ export class Day02 extends P5Base {
     this.thriceCount = 0;
     this.part1Done = false;
     this.part2Done = false;
+    this.p5;
   }
 
   setup(p) {
