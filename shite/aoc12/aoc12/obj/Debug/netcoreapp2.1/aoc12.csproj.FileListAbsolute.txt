@@ -1,0 +1,11 @@
+C:\git\aoc2018\shite\aoc12\aoc12\bin\Debug\netcoreapp2.1\aoc12.deps.json
+C:\git\aoc2018\shite\aoc12\aoc12\bin\Debug\netcoreapp2.1\aoc12.runtimeconfig.json
+C:\git\aoc2018\shite\aoc12\aoc12\bin\Debug\netcoreapp2.1\aoc12.runtimeconfig.dev.json
+C:\git\aoc2018\shite\aoc12\aoc12\bin\Debug\netcoreapp2.1\aoc12.dll
+C:\git\aoc2018\shite\aoc12\aoc12\bin\Debug\netcoreapp2.1\aoc12.pdb
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.csprojAssemblyReference.cache
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.csproj.CoreCompileInputs.cache
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.AssemblyInfoInputs.cache
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.AssemblyInfo.cs
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.dll
+C:\git\aoc2018\shite\aoc12\aoc12\obj\Debug\netcoreapp2.1\aoc12.pdb
