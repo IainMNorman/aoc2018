@@ -13,7 +13,7 @@ namespace aoc12
             var input = File.ReadAllLines(@"d:\temp\aoc12.txt");
 
             Part1(input);
-            
+
         }
 
         private static void Part1(string[] input)
@@ -29,11 +29,11 @@ namespace aoc12
                 rules.Add(new Rule() { Pattern = input[i].Substring(0, 5), Result = input[i].Substring(9, 1).ToCharArray()[0] });
             }
 
-            for (int gen = 0; gen < 200; gen++)
+            for (long gen = 0; gen < 50000000000; gen++)
             {
                 var nextState = new StringBuilder(currentState.ToString());
                 foreach (var rule in rules)
-                {                    
+                {
                     for (int i = 2; i < initialState.Length - 2; i++)
                     {
                         if (currentState.ToString(i - 2, 5) == rule.Pattern)
@@ -54,10 +54,13 @@ namespace aoc12
                     }
                 }
 
-                Console.WriteLine($"{gen+1} - {total}");
+                if (gen % 1000 == 0)
+                {
+                    Console.WriteLine($"{gen + 1} - {total}");
+                }
             }
 
-            Console.ReadLine();  
+            Console.ReadLine();
         }
     }
 
