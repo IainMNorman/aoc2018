@@ -1,0 +1,11 @@
+/Users/iainnorman/aoc2018/shite/aoc15/bin/Debug/netcoreapp2.1/aoc15.deps.json
+/Users/iainnorman/aoc2018/shite/aoc15/bin/Debug/netcoreapp2.1/aoc15.runtimeconfig.json
+/Users/iainnorman/aoc2018/shite/aoc15/bin/Debug/netcoreapp2.1/aoc15.runtimeconfig.dev.json
+/Users/iainnorman/aoc2018/shite/aoc15/bin/Debug/netcoreapp2.1/aoc15.dll
+/Users/iainnorman/aoc2018/shite/aoc15/bin/Debug/netcoreapp2.1/aoc15.pdb
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.csproj.CoreCompileInputs.cache
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.AssemblyInfoInputs.cache
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.AssemblyInfo.cs
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.dll
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.pdb
+/Users/iainnorman/aoc2018/shite/aoc15/obj/Debug/netcoreapp2.1/aoc15.csprojAssemblyReference.cache

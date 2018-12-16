@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{27228892-F396-4826-89B6-5617B66445CF}|Default">
+  <MonoDevelop.Ide.ItemProperties.aoc15 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/iainnorman/aoc2018/shite/aoc15/Tile.cs" relfile="Tile.cs" line="3" column="1" />
+      <Breakpoint file="/Users/iainnorman/aoc2018/shite/aoc15/Board.cs" relfile="Board.cs" line="43" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
