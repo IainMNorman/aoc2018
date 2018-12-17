@@ -15,17 +15,29 @@ namespace aoc13
 
     internal static class Program
     {
-        static readonly Dictionary<Vector2, char> Map = new Dictionary<Vector2, char>();
-        static List<Cart> carts = new List<Cart>();
-
         static void Main(string[] args)
         {
-            var input = File.ReadAllLines(@"d:\temp\aoc13.txt");
+            var input = File.ReadAllLines(@"d:\temp\aoc13test.txt");
             Part1(input);
+
+            Console.WriteLine("\n\n\n");
+
+            input = File.ReadAllLines(@"d:\temp\aoc13.txt");
+            Part1(input);
+
+            Console.WriteLine("\n\n\n");
+
+            input = File.ReadAllLines(@"d:\temp\19andy.txt");
+            Part1(input);
+
+            Console.ReadLine();
         }
 
         static void Part1(string[] input)
         {
+            Dictionary<Vector2, char> Map = new Dictionary<Vector2, char>();
+            List<Cart> carts = new List<Cart>();
+
             var running = true;
 
             var width = input.Max(x => x.Length);
@@ -70,31 +82,35 @@ namespace aoc13
                     }
                 }
             }
-            //Render(width, height);
+
             while (running)
             {
-                
-
-                foreach (var cart in carts)
+                foreach (var cart in carts.OrderBy(o => o.Position.Y).ThenBy(o => o.Position.X))
                 {
-                    cart.Move(Map);
+                    if (!cart.Crashed) cart.Move(Map);
+                    CheckCollisions(carts);
                 }
-                //Render(width, height);
-                if (CheckCollisions()) running = false;
+
+                carts.RemoveAll(x => x.Crashed);
+                if (carts.Count != 1) continue;
+                Console.WriteLine($"Last cart at {carts.First().Position.X},{carts.First().Position.Y}");
+                running = false;
             }
 
-            Console.ReadLine();
+
         }
 
-        static bool CheckCollisions()
+        static void CheckCollisions(List<Cart> carts)
         {
-            var collisions = carts.GroupBy(x => x.Position).Select(g => new
+            var collisions = carts.Where(x => !x.Crashed).GroupBy(x => x.Position).Select(g => new
             {
                 g.Key,
                 Count = g.Count()
             }).Where(x => x.Count > 1);
 
-            if (!collisions.Any()) return false;
+            if (!collisions.Any()) return;
+
+            Console.WriteLine($"{collisions.Count()} collisions: ");
 
             foreach (var collision in collisions)
             {
@@ -102,19 +118,14 @@ namespace aoc13
 
                 Console.WriteLine($"Collision at {pos.X},{pos.Y}");
 
-                carts.RemoveAll(x => x.Position == pos);
+                foreach (var cart in carts.Where(x => x.Position == pos))
+                {
+                    cart.Crashed = true;
+                }
             }
-
-            
-
-            if (carts.Count > 1) return false;
-
-            Console.WriteLine($"Last cart at {carts.First().Position.X},{carts.First().Position.Y}");
-
-            return true;
         }
 
-        static void Render(int width, int height)
+        static void Render(List<Cart> carts, Dictionary<Vector2, char> map, int width, int height)
         {
             Console.Clear();
             for (var y = 0; y < height; y++)
@@ -128,7 +139,7 @@ namespace aoc13
                     }
                     else
                     {
-                        Console.Write(Map.ContainsKey(pos) ? Map[pos] : ' ');
+                        Console.Write(map.ContainsKey(pos) ? map[pos] : ' ');
                     }
                 }
 
@@ -163,6 +174,8 @@ namespace aoc13
         public Vector2 Direction { get; set; }
 
         public Vector2 Position { get; set; }
+
+        public bool Crashed { get; set; } = false;
 
         Intersection NextIntersection { get; set; } = Intersection.Left;
 
