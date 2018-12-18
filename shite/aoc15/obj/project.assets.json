@@ -516,10 +516,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.0": {
-      "sha512": "TT+QCi9LcxGTjBssH7S7n5+8DVcwfG4DYgXX7Dk7+BfZ4oVHj8Q0CbYk9glzAlHLsSt3bYzol+fOdra2iu6GOw==",
+      "sha512": "aSTPL94NloSiQVL5Len8wbjFKOnoAX/vOh3s3DF6g3c7GUUMLCDvnBhmA72M2iN2AedyA8hpr7m89kzSAKUnJQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.1.0",
       "files": [
+        ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -681,29 +682,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/iainnorman/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\iain\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/iainnorman/aoc2018/shite/aoc15/aoc15.csproj",
+      "projectUniqueName": "D:\\git\\aoc2018\\shite\\aoc15\\aoc15.csproj",
       "projectName": "aoc15",
-      "projectPath": "/Users/iainnorman/aoc2018/shite/aoc15/aoc15.csproj",
-      "packagesPath": "/Users/iainnorman/.nuget/packages/",
-      "outputPath": "/Users/iainnorman/aoc2018/shite/aoc15/obj/",
+      "projectPath": "D:\\git\\aoc2018\\shite\\aoc15\\aoc15.csproj",
+      "packagesPath": "C:\\Users\\iain\\.nuget\\packages\\",
+      "outputPath": "D:\\git\\aoc2018\\shite\\aoc15\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/iainnorman/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\iain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "/Users/iainnorman/.dotnet/NuGetFallbackFolder": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
